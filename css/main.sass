@@ -1,0 +1,337 @@
+@font-face
+    font-family: "Aeroport"
+    src: url("../fonts/AEROPORT-MEDIUM.TTF")
+
+@font-face
+    font-family: "Aeroport Mono"
+    src: url("../fonts/AEROPORTMONO.TTF")
+
+body, html
+    width: 100% !important
+    height: 100% !important
+
+body
+    font-family: Aeroport
+    .main__cta-button
+        text-decoration: none
+        color: inherit
+        padding: 10px 40px
+        border: 3px solid #151515
+        border-radius: 10px
+        background: #4a4a4a
+        transition: .1s color linear
+        &:hover
+            background-color: #32dd2c
+            color: #303030
+
+    .cta
+        text-decoration: none
+        color: #000
+        background-color: #00ff1e
+        padding: 10px 30px
+        border-radius: 5px
+        margin: 20px 0 10px 0
+        transition: .1s all linear
+        &:hover
+            transform: scale(1.15)
+            font-weight: bold
+
+main.main
+    width: 100%
+    height: 100vh
+    background: #6DAC2A
+    color: #f1f1f1
+    margin: 0
+    padding: 50px
+    nav
+        & *
+            transition: 0.1s all linear
+        ul
+            list-style-type: none
+            padding: 0 !important
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+        a
+            text-decoration: none
+            color: inherit
+
+        .contacts__block
+            display: flex
+            flex-direction: column
+
+            li
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                width: 100%
+                i
+                    margin: 0 10px 0 0
+                a
+                    text-decoration: underline
+                    font-weight: bold
+
+        .links
+            li
+                margin: 0 20px
+                a
+                    position: relative
+                    &::after
+                        content: ""
+                        width: 100%
+                        height: 1px
+                        position: absolute
+                        bottom: -2px
+                        left: 0px
+                        background-color: #f1f1f1
+                        opacity: 0
+
+                    &:hover
+                        &::after
+                            opacity: 1
+
+    .contacts__media
+        li
+            margin: 0 10px
+            font-size: 30px
+            &:hover
+                color: #83c35e
+                transform: scale(1.24)
+
+    h1
+        color: #55F505
+
+    h4
+        font-size: 50px
+
+    h5
+        font-size: 30px
+
+section.conditions
+    background-color: #e7e7e7
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 40px 0
+    h2
+        font-weight: bold
+        font-size: 55px
+        max-width: 80%
+        text-align: left
+
+    .conditions__container
+        padding: 100px 50px
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+
+        .condition
+            background-color: #fff
+            width: 25%
+            height: 500px
+
+            display: flex
+            flex-direction: column
+            justify-content: space-evenly
+            align-items: center
+            text-align: left
+            padding: 20px 30px
+            border-radius: 10px
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
+            h3
+                font-weight: bold
+                font-size: 24px
+                text-align: center
+                margin: 20px 0 0 0
+
+section.advantages
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 50px 150px 150px
+    h2
+        font-size: 40px
+
+    ul
+        list-style-type: none
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        padding: 50px 0
+        li
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            .advantage
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+            i
+                background-color: #000
+                color: #fff
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 80px
+                height: 80px
+                font-size: 30px
+                border-radius: 50%
+
+            span
+                display: block
+                margin: 10px 0 0 0
+                font-weight: bold
+                font-size: 21px
+
+    .our-team-speech
+        padding: 150px 0 20px 0
+        display: flex
+        align-items: center
+        li
+            padding: 0 10px
+            font-size: 16px
+
+            p
+                text-align: justify
+
+            &:first-child
+                font-family: 'Playfair Display', serif
+                border-left: 2px solid #000
+                font-size: 20px
+
+    h4, h5
+        text-align: center
+
+    h5
+        font-size: 40px
+        font-weight: bold
+
+    h6
+        font-size: 22px
+        text-align: center
+
+section.catalog
+    padding: 0px 50px 50px
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h2
+        font-size: 50px
+
+    .row
+        &:not(:first-child)
+            margin-top: 50px
+
+    .catalog__item
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        &-img
+            height: 300px
+            overflow: hidden
+            img
+                width: 100%
+                height: initial
+                object-fit: cover
+                object-position: left
+
+        h3
+            font-weight: bold
+            font-size: 20px
+            margin-top: 10px
+
+        h4
+            font-size: 18px
+
+section.clients
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    padding-top: 50px
+    h2
+        font-size: 50px
+
+    .swiper
+        width: 65%
+        height: 300px
+        &-slide
+            display: flex
+            justify-content: center
+            align-items: center
+        .client-img
+            img
+                height: 100px
+                width: auto
+
+section.free-export
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 100px 0 0 0
+    background: #ececec
+
+    h2
+        font-size: 40px
+        margin: 0 0 15px 0
+
+    p
+        font-size: 23px
+        text-align: center
+
+section.reviews
+    padding: 50px 0 0 0
+    h2
+        font-size: 40px
+        text-align: center
+
+    .swiper
+        width: 80%
+
+    .swiper-slide
+        margin: 0 auto
+        display: flex
+        justify-content: center
+
+    .review
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        justify-content: center
+        padding: 30px 25px
+        background-color: #303030
+        color: #f1f1f1
+        width: 94%
+
+        &__text
+            font-size: 17px
+            text-align: justify
+            font-family: "Aeroport Mono"
+
+        &__author
+            display: flex
+            align-items: center
+            justify-content: center
+            margin: 10px 0 0 0
+
+        &__author-avatar
+            width: 60px
+            height: 60px
+            margin: 0 10px 0 0
+            img
+                border-radius: 50%
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center
+
+        &__author-name
+            font-weight: bold
+            display: block
