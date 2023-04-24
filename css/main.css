@@ -7,6 +7,7 @@
   src: url("../fonts/AEROPORTMONO.TTF");
 }
 body, html {
+  scroll-behavior: smooth !important;
   width: 100% !important;
   height: 100% !important;
 }
@@ -20,7 +21,7 @@ body .main__cta-button {
   padding: 10px 40px;
   border: 3px solid #151515;
   border-radius: 10px;
-  background: #4a4a4a;
+  background: #32dd2c;
   transition: 0.1s color linear;
 }
 body .main__cta-button:hover {
@@ -43,11 +44,16 @@ body .cta:hover {
 
 main.main {
   width: 100%;
-  height: 100vh;
-  background: #6DAC2A;
+  min-height: 100vh;
+  background: #120b7b;
   color: #f1f1f1;
   margin: 0;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+main.main nav {
+  flex: 0 0 auto;
 }
 main.main nav * {
   transition: 0.1s all linear;
@@ -99,12 +105,27 @@ main.main nav .links li a::after {
 main.main nav .links li a:hover::after {
   opacity: 1;
 }
+@media screen and (max-width: 800px) {
+  main.main nav > ul {
+    flex-direction: column;
+  }
+  main.main nav > ul > li {
+    margin: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+main.main > section {
+  flex: 1 1 auto;
+}
 main.main .contacts__media li {
   margin: 0 10px;
   font-size: 30px;
 }
 main.main .contacts__media li:hover {
-  color: #83c35e;
+  color: #5eff00;
   transform: scale(1.24);
 }
 main.main h1 {
@@ -155,6 +176,23 @@ section.conditions .conditions__container .condition h3 {
   text-align: center;
   margin: 20px 0 0 0;
 }
+@media screen and (max-width: 1372px) {
+  section.conditions .conditions__container {
+    flex-direction: column;
+  }
+  section.conditions .conditions__container .condition {
+    width: 100%;
+    margin: 20px 0;
+  }
+  section.conditions .conditions__container .condition > * {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 800px) {
+  section.conditions .condition > * {
+    font-size: 20px;
+  }
+}
 
 section.advantages {
   display: flex;
@@ -165,7 +203,7 @@ section.advantages {
 section.advantages h2 {
   font-size: 40px;
 }
-section.advantages ul {
+section.advantages > ul {
   list-style-type: none;
   width: 100%;
   display: flex;
@@ -173,19 +211,19 @@ section.advantages ul {
   justify-content: space-evenly;
   padding: 50px 0;
 }
-section.advantages ul li {
+section.advantages > ul li {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-section.advantages ul li .advantage {
+section.advantages > ul li .advantage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-section.advantages ul li i {
+section.advantages > ul li i {
   background-color: #000;
   color: #fff;
   display: flex;
@@ -196,20 +234,20 @@ section.advantages ul li i {
   font-size: 30px;
   border-radius: 50%;
 }
-section.advantages ul li span {
+section.advantages > ul li span {
   display: block;
   margin: 10px 0 0 0;
   font-weight: bold;
   font-size: 21px;
 }
 section.advantages .our-team-speech {
-  padding: 150px 0 20px 0;
   display: flex;
   align-items: center;
 }
 section.advantages .our-team-speech li {
   padding: 0 10px;
   font-size: 16px;
+  margin: 0 10px;
 }
 section.advantages .our-team-speech li p {
   text-align: justify;
@@ -229,6 +267,21 @@ section.advantages h5 {
 section.advantages h6 {
   font-size: 22px;
   text-align: center;
+}
+@media screen and (max-width: 800px) {
+  section.advantages {
+    padding: 50px 70px 150px;
+  }
+  section.advantages > ul {
+    flex-direction: column;
+  }
+  section.advantages > ul li {
+    width: 100%;
+    margin: 15px 0;
+  }
+  section.advantages .our-team-speech li {
+    margin: 10px 0;
+  }
 }
 
 section.catalog {
@@ -270,36 +323,11 @@ section.catalog .catalog__item h4 {
   font-size: 18px;
 }
 
-section.clients {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 50px;
-}
-section.clients h2 {
-  font-size: 50px;
-}
-section.clients .swiper {
-  width: 65%;
-  height: 300px;
-}
-section.clients .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-section.clients .swiper .client-img img {
-  height: 100px;
-  width: auto;
-}
-
 section.free-export {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0 0 0;
+  padding: 100px 50px;
   background: #ececec;
 }
 section.free-export h2 {
@@ -335,6 +363,8 @@ section.reviews .review {
   background-color: #303030;
   color: #f1f1f1;
   width: 94%;
+  border-radius: 20px;
+  box-shadow: 8px -5px 8px 4px rgba(34, 60, 80, 0.2);
 }
 section.reviews .review__text {
   font-size: 17px;
@@ -364,4 +394,42 @@ section.reviews .review__author-avatar img {
 section.reviews .review__author-name {
   font-weight: bold;
   display: block;
+}
+
+footer {
+  background-color: #120b7b;
+  color: #f1f1f1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  min-height: 400px;
+}
+footer nav {
+  padding: 30px 0 0 0;
+}
+footer nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer nav a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.07s all linear;
+}
+footer nav a:hover {
+  color: #5eff00;
+}
+footer nav .contacts__media {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+footer nav .contacts__media li {
+  margin: 0 10px;
+}
+footer nav .contacts__media li:hover {
+  transform: scale(1.4);
 }/*# sourceMappingURL=main.css.map */
